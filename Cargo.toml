@@ -1,0 +1,20 @@
+[package]
+name = "account-service"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+worker = { git = "https://github.com/etheryal/workers-rs.git" }
+console_error_panic_hook = { version = "0.1.1", optional = true }
+axum = { git = "https://github.com/tokio-rs/axum.git", default-features = false, features = ["query"] }
+http = "0.2.8"
+tower-service = "0.3.2"
+
+[profile.release]
+opt-level = "s"

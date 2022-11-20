@@ -1,0 +1,8 @@
+name = "etheryal-account-service"
+main = "build/worker/shim.mjs"
+compatibility_date = "2022-11-20"
+account_id = "7ce25cd8c5c6fe175087e6de9a762acb"
+compatibility_flags = ["streams_enable_constructors"]
+
+[build]
+command = "cargo install --git https://github.com/etheryal/workers-rs.git worker-build && worker-build --release"
